@@ -497,9 +497,11 @@ async function handleRequest(request, env) {
     const chatId = update.message.chat.id;
     await sendMessage(chatId, `
 Merhaba! Ben bir emoji spam engelleme botuyum. Belirli bir kalıba uygun kullanıcıları tespit edip, gruptan otomatik olarak engellerim.
-
 Lütfen beni grubunuza ekledikten sonra yönetici (admin) olarak atayın. Ancak bu şekilde tam kapasiteyle çalışabilirim.
-    `, env);
+
+Hello! I am an emoji spam prevention bot. I detect users matching a specific pattern and automatically ban them from the group.
+Please set me as an admin after adding me to your group to ensure full functionality.
+      `, env);
     return new Response('OK', { status: 200 });
   }
 
@@ -513,9 +515,11 @@ Lütfen beni grubunuza ekledikten sonra yönetici (admin) olarak atayın. Ancak 
       if (member.is_bot && member.username === env.BOT_NAME) {
         await sendMessage(chatId, `
 Merhaba! Bu bot, belirli spam davranışlarına sahip kullanıcıları otomatik olarak engeller.
-
 Botun doğru çalışabilmesi için, grup yöneticileri tarafından yönetici olarak atanmalıdır.
-        `, env);
+
+Hello! This bot automatically bans users who exhibit specific spam behaviors.
+It needs to be set as an admin by group admins to work properly.
+          `, env);
         continue;
       }
 
