@@ -1,4 +1,4 @@
-// List of one-word Turkish girl names (truncated for brevity)
+// List of one-word Turkish girl names
 const turkishGirlNames = [
   "Abendam",
   "Açela",
